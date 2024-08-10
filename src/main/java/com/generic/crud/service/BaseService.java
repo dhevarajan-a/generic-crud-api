@@ -1,17 +1,33 @@
 package com.generic.crud.service;
 
 import com.generic.crud.entity.BaseEntity;
+import com.generic.crud.repository.BaseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class BaseService {
+
+    @Autowired
+    BaseRepository baseRepository;
+
     public Object getAll() {
-        BaseEntity baseEntity = new BaseEntity(1);
-        List<BaseEntity> responseList = new ArrayList<>();
-        responseList.add(baseEntity);
-        return responseList;
+        return baseRepository.findAll();
+    }
+
+    public Object getById(Integer id) {
+        return baseRepository.findById(id);
+    }
+
+    public Object create(BaseEntity entity) {
+        return baseRepository.save(entity);
+    }
+
+    public Object update(BaseEntity entity) {
+        return baseRepository.save(entity);
+    }
+
+    public void deleteById(Integer id) {
+        baseRepository.deleteById(id);
     }
 }

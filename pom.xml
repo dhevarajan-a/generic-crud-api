@@ -12,7 +12,7 @@
     <artifactId>crud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>crud</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Generic crud API</description>
     <url/>
     <licenses>
         <license/>
@@ -59,8 +59,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${project.parent.version}</version>
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub dhevarajan-a Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/dhevarajan-a/generic-crud-api</url>
+        </repository>
+    </distributionManagement>
 
 </project>
